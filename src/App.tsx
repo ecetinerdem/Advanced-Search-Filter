@@ -1,7 +1,17 @@
+import { BrowserRouter as Router } from "react-router-dom";
+
+import Sidebar from "./components/Sidebar";
+
+
+
 function App() {
   return (
     <>
-      <div>App</div>
+    <Router>
+      <div className="flex h-screen">
+        <Sidebar/>
+      </div>
+    </Router>
     </>
   );
 }
