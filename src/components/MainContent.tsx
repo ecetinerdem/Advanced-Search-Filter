@@ -89,6 +89,7 @@ const MainContent = () => {
                         <BookCard key={product.id} id={product.id} title={product.title} image={product.thumbnail} price={product.price} />
                     ))}
                 </div>
+                {/* Pagination */}
             </div>
         </section>
     )
