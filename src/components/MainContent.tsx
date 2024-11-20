@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useFilter } from "./FilterContext";
+import axios from "axios"
 import { Tally3 } from "lucide-react"
 
 const MainContent = () => {
@@ -12,7 +13,17 @@ const MainContent = () => {
     const itemsPerPage = 12;
 
     useEffect(() => {
+        let url = `https://dummyjson.com/products?limit${itemsPerPage}&skip${currentPage - 1} * ${itemsPerPage}`;
+        if (keyword) {
+            url = `https://dummyjson.com/products/search?q=${keyword}`
+        }
 
+        axios.get(url).then(response => {
+            setProducts(response.data.products);
+
+        }).catch((error) => {
+            console.log("Error fetching the data ", error)
+        })
     }, [currentPage, keyword])
 
     return (
