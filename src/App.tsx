@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
+import ProductPage from "./components/ProductPage";
 
 
 
@@ -14,6 +15,7 @@ function App() {
         <div className="rounded w-full flex justify-between flex-wrap">
           <Routes>
             <Route path="/" element={<MainContent />} />
+            <Route path="/product:id" element={<ProductPage />} />
           </Routes>
         </div>
       </div>
